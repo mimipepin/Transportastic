@@ -1,13 +1,10 @@
+@import "bootstrap";
 body {
-    background-color: lightgray;
+    background-color: yellowgreen;
 }
 
-.bg-image{
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
+.nav-text {
+    margin-top: -70%;
+    margin-bottom: 1rem;
+    margin-left: -5%;
 }
-
-  
-@import "~bootstrap/scss/bootstrap";
