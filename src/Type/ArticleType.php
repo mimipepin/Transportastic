@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Form\Type;
+namespace App\Type;
 
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
@@ -12,11 +12,11 @@ class ArticleType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
             ->add('title', TextType::class, [
-                'label' => 'Titre',
+                'label' => 'Title',
             ])
             ->add('content', CKEditorType::class)
             ->add('submit', SubmitType::class, [
-                'label' => 'Envoyer',
+                'label' => 'Submit',
             ]);
     }
 }
