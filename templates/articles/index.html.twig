@@ -10,6 +10,27 @@
 
 
 <div class="form-control text-center">
-{{ form(form) }}
+{{ form_start(form) }}
+    {{ form_row(form.title)}}
+    <p>Message</p>
+    <div id="toolbarContainer"></div>
+    <div id="editor"></div>
+{{ form_end(form) }}
 </div>
+<script>
+    DecoupledEditor
+        .create( document.querySelector( '#editor' ) )
+        .then( editor => {
+            const toolbarContainer = document.querySelector( '#toolbarContainer' );
+
+            toolbarContainer.appendChild( editor.ui.view.toolbar.element );
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://cdn.ckeditor.com/ckeditor5/37.0.1/decoupled-document/ckeditor.js"></script>
 {% endblock %}

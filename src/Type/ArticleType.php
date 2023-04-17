@@ -2,8 +2,8 @@
 
 namespace App\Type;
 
-use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -14,7 +14,8 @@ class ArticleType extends AbstractType {
             ->add('title', TextType::class, [
                 'label' => 'Title',
             ])
-            ->add('content', CKEditorType::class)
+            ->add('toolbarContainer', HiddenType::class)
+            ->add('editor', HiddenType::class)
             ->add('submit', SubmitType::class, [
                 'label' => 'Submit',
             ]);
