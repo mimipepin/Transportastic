@@ -18,7 +18,7 @@
 {{ form_end(form) }}
 </div>
 <script>
-    DecoupledEditor
+    DecoupledDocumentEditor
         .create( document.querySelector( '#editor' ) )
         .then( editor => {
             const toolbarContainer = document.querySelector( '#toolbarContainer' );
@@ -32,5 +32,5 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script src="https://cdn.ckeditor.com/ckeditor5/37.0.1/decoupled-document/ckeditor.js"></script>
+    <script src="http://127.0.0.1:8000/ckeditor5-37.0.1-9kw6pcxxup4z/build/ckeditor.js"></script>
 {% endblock %}
