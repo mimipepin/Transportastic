@@ -3,23 +3,15 @@
 {% block title %}Hello ArticlesController!{% endblock %}
 
 {% block body %}
-{# <style>
-    .example-wrapper { 
-        margin: 1em auto; max-width: 800px; 
-        width: 95%; font: 18px/1.5 sans-serif; 
-    }
-    .example-wrapper code { 
-        background: #F5F5F5; 
-        padding: 2px 6px; 
-    }
-
-</style> #}
 
 
 <div class="form-control text-center">
 {{ form_start(form) }}
-    {{ form_row(form.title)}}
-    <p>Message</p>
+    <div class="d-inline-flex gap-3 m-2">
+        {{ form_label(form.title) }}
+        {{ form_widget(form.title)}}
+    </div>
+
     <div class="document-editor">
         <div id="toolbarContainer" class="document-editor__toolbar"></div>
         <div class="document-editor__editable-container">
