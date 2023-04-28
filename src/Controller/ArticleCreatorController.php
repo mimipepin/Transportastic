@@ -7,27 +7,21 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Type\ArticleType;
+use App\Entity\Article;
 
 
-class ArticlesController extends AbstractController
+class ArticleCreatorController extends AbstractController
 {
-    #[Route('/articles', name: 'app_articles')]
+    #[Route('/article_creator', name: 'app_article_creator')]
     public function articles    (Request $request): Response
     {
-        $defaultData = ['message' => 'Type your message here'];
-      /*  $form = $this->createFormBuilder($defaultData)
-            ->add('name', TextType::class)
-            ->add('email', EmailType::class)
-            ->add('message', TextareaType::class)
-            ->add('send', SubmitType::class)
-            ->getForm();
-*/
         $form = $this->createForm(ArticleType::class);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // data is an array with "name", "email", and "message" keys
+            // data is an array with "title", "editor" keys
             $data = $form->getData();
+            //dd($data);
         }
 
         return $this->render('articles/index.html.twig', [
