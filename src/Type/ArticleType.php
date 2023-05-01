@@ -14,8 +14,7 @@ class ArticleType extends AbstractType {
             ->add('title', TextType::class, [
                 'label' => 'Title',
             ])
-            ->add('toolbarContainer', HiddenType::class)
-            ->add('editor', HiddenType::class)
+            ->add('editor_hidden', HiddenType::class)
             ->add('submit', SubmitType::class, [
                 'label' => 'Submit',
             ]);
