@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class TramsController extends AbstractController
+class ForumController extends AbstractController
 {
-    #[Route('/trams', name: 'app_trams')]
+    #[Route('/forum', name: 'app_forum')]
     public function index(): Response
     {
-        return $this->render('trams/index.html.twig', [
-            'controller_name' => 'TramsController',
+        return $this->render('forum/index.html.twig', [
+            'controller_name' => 'ForumController',
         ]);
     }
 }

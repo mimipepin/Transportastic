@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TrainsController!{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+        {% for row in articles|batch(2) %}
+            <div class="row">
+            {% for article in row %}
+                <div class="col-6">
+                    {{ include('_partials/_articleCard.html.twig', {'article': article}) }}    
+                </div>
+            {% endfor %}
+            </div>
+        {% endfor %}
+</div>
+{% endblock %}
