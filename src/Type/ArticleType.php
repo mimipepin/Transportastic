@@ -3,9 +3,10 @@
 namespace App\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ArticleType extends AbstractType {
@@ -15,6 +16,9 @@ class ArticleType extends AbstractType {
                 'label' => 'Title',
             ])
             ->add('editor_hidden', HiddenType::class)
+            ->add('imageFile', VichImageType::class, [
+                'label' => 'Thumbnail'
+            ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Submit',
             ]);

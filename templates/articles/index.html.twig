@@ -18,8 +18,13 @@
             <div id="editor" class="document-editor__editable"></div>
         </div>
     </div>
+
+    <div class="d-inline-flex gap-3 m-2">
+        {{ form_row(form.imageFile) }}
+    </div>
 {{ form_end(form) }}
 </div>
+
 <script>
     DecoupledDocumentEditor
         .create( document.querySelector( '#editor' ) )

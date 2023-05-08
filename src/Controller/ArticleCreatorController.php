@@ -22,18 +22,20 @@ class ArticleCreatorController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             // data is an array with "title", "editor" keys
             $data = $form->getData();
-            //dd($data);
-            
+            // dd($data);
 
             $article = new article();
             $article->setTitle($data["title"]);
             $article->setContent($data["editor_hidden"]);
+            $article->setImageFile($data["imageFile"]);
 
             // tell Doctrine you want to (eventually) save the article (no queries yet)
             $entityManager->persist($article);
 
             // actually executes the queries (i.e. the INSERT query)
             $entityManager->flush();
+
+            return $this->redirectToRoute('app_article_creator'); // renvoie sur une page toute propre. Sinon ya encore les données du form précédent et AAAAAAAAAAAAAAAAHYAAAAAAAAAAA
         }
 
         return $this->render('articles/index.html.twig', [
